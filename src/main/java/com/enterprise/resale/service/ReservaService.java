@@ -67,4 +67,12 @@ public class ReservaService {
         reserva.setStatus(StatusReserva.CANCELADA);
         reservaRepository.save(reserva);
     }
+
+    public ReservaResponseDTO buscarPorId(Long id) {
+
+        Reserva reserva = reservaRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Reserva não encontrada"));
+
+        return ReservaMapper.toDTO(reserva);
+    }
 }
