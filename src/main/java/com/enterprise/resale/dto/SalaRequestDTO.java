@@ -18,6 +18,4 @@ public class SalaRequestDTO {
 
     @NotNull(message = "Status é obrigatório")
     private String status;
-
-    // getters e setters
 }
